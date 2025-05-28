@@ -1,3 +1,5 @@
+<reference types="cypress"/>
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -10,7 +12,15 @@
 //
 //
 // -- This is a parent command --
-//Cypress.Commands.add('login', (email, password) => {  })
+Cypress.Commands.add('myCommand', () => { 
+cy.get('#scroll-vertical button').scrollIntoView()
+cy.get('#scroll-vertical button')
+cy.get('#scroll-vertical button').scrollIntoView()
+cy.get('#scroll-vertical button')
+cy.get('#scroll-vertical button').scrollIntoView()
+cy.get('#scroll-vertical button')
+
+ })
 //
 //
 // -- This is a child command --

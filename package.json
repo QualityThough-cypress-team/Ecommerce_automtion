@@ -1,5 +1,5 @@
 {
-  "type": "module",
+ 
 
   "devDependencies": {
     "cypress": "^14.3.2"

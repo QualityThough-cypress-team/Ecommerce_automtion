@@ -1,0 +1,5 @@
+//create test data for csv data driven testing 
+//username , password , age , gender
+username,password,age,gender
+ram,123456,30,male
+rama,123,40,female

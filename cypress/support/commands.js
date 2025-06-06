@@ -1,4 +1,4 @@
-<reference types="cypress"/>
+///<reference types="cypress"/>
 
 // ***********************************************
 // This example commands.js shows you how to
@@ -11,16 +11,23 @@
 // ***********************************************
 //
 //
-// -- This is a parent command --
-Cypress.Commands.add('myCommand', () => { 
-cy.get('#scroll-vertical button').scrollIntoView()
-cy.get('#scroll-vertical button')
-cy.get('#scroll-vertical button').scrollIntoView()
-cy.get('#scroll-vertical button')
-cy.get('#scroll-vertical button').scrollIntoView()
-cy.get('#scroll-vertical button')
+//create a code to 
 
+// -- This is a parent command --
+
+Cypress.Commands.add('myButton', (location) => {
+ cy.get(location).click()
+
+})
+Cypress.Commands.add('login', (username,pwd) => { 
+    cy.get('#loginUsername').type(username)
+        cy.get('#loginPassword').type(pwd)
  })
+Cypress.Commands.add('signup', (username,password) => {
+     cy.get('#signupUsername').type(username)
+        cy.get('#signupPassword').type(password)
+       
+})
 //
 //
 // -- This is a child command --

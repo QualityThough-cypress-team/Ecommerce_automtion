@@ -1,0 +1,17 @@
+const neatCSV = require('neat-csv');
+const fs = require('fs');
+
+describe('Read CSV Data with neat-csv', () => {
+    it('should read and parse CSV file', () => {
+        const csvFilePath = 'cypress/fixtures/sample.csv'; // Place your CSV file here
+
+        cy.readFile(csvFilePath).then(async (text) => {
+            const data = await neatCSV(text);
+            //cy.fixtire().neatCSV().then('dat'){}
+            // Now 'data' is an array of objects representing CSV rows
+            cy.log(JSON.stringify(data));
+            // Example: assert something
+            expect(data).to.have.length.greaterThan(0);
+        });
+    });
+});

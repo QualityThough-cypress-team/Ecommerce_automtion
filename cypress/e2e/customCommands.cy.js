@@ -17,7 +17,7 @@
 
 describe("Custom Commands", () => {
     it("Custom Command", () => {
-        cy.visit("http://192.168.146.87:8080/cypress/HTML/signup_login.html");
+        cy.visit("cypress/HTML/signup_login.html");
       cy.signup('muuser','mypassword') // using the custom command to signup
         //the above steps open browser with signup page
         //fillup the username and password fields 
@@ -37,7 +37,7 @@ describe("Custom Commands", () => {
     })
 
     it("custom commands in second test", () => {
-        cy.visit("http://192.168.146.87:8080/cypress/HTML/signup_login.html");
+        cy.visit("cypress/HTML/signup_login.html");
         cy.signup('tester','testpassword') // using the custom command to signup
               cy.myButton('form[id="signupForm"] [type="submit"]')
         cy.login('mytest','yourpassword') // using the custom command to login
@@ -45,7 +45,8 @@ describe("Custom Commands", () => {
 })
 
 it("custom commands and fixture", function(){
-    cy.visit("http://192.168.146.87:8080/cypress/HTML/signup_login.html");
+    cy.visit("cypress/HTML/signup_login.html");
+    //http://192.168.80.87:8080/cypress/HTML/signup_login.html
     cy.fixture('signup.json').then((data) => {
         cy.signup(data.username, data.password); 
         cy.myButton('form[id="signupForm"] [type="submit"]')

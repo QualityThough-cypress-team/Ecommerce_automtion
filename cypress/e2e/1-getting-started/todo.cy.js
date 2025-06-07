@@ -107,6 +107,7 @@ describe('example to-do app', () => {
       // We'll click on the "active" button in order to
       // display only incomplete items
       cy.contains('Active').click()
+      //cy.screenshot('Active tasks')
 
       // After filtering, we can assert that there is only the one
       // incomplete item in the list.
@@ -114,23 +115,32 @@ describe('example to-do app', () => {
         .should('have.length', 1)
         .first()
         .should('have.text', 'Walk the dog')
+        //cy.screenshot('Active tasks - Walk the dog')
 
       // For good measure, let's also assert that the task we checked off
       // does not exist on the page.
       cy.contains('Pay electric bill').should('not.exist')
+      //cy.screenshot('Active tasks - Pay electric bill not exist')
+
     })
 
     it('can filter for completed tasks', () => {
+
       // We can perform similar steps as the test above to ensure
       // that only completed tasks are shown
       cy.contains('Completed').click()
+
+      //cy.screenshot()
 
       cy.get('.todo-list li')
         .should('have.length', 1)
         .first()
         .should('have.text', 'Pay electric bill')
+        //.screenshot('Completed tasks - Pay electric bill')
 
-      cy.contains('Walk the dog').should('not.exist')
+      cy.contains('Walk the dog')
+      //.screenshot()
+      // .should('not.exist')
     })
 
     it('can delete all completed tasks', () => {

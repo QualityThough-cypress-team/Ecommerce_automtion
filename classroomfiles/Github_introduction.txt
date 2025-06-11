@@ -1,0 +1,39 @@
+Good Morning !!!!!
+
+We would like to understand the importance of Git/GitHub
+along with practical  explanation. 
+
+After this session we collaboratively work on same project or repository daily. 
+
+so you can directly work on classfiles and tasks with in the same repository . 
+
+in future we can integrate this repository to the cypress cloud /CI pipeline .
+
+1. Create an account in GitHub (underlying technology) 
+2. GitHub desktop - 
+3. login from githubdesktop to GitHub 
+
+GitHub desktop is GUI tool to connect with your GitHub repositories from your local machines. 
+
+git contains commands 
+GitHub desktop  is not having the CLI => GUI
+
+
+1. Visibility of the repository - repo -> 
+if it is public you can access  => open source projects are public repos 
+if it  is not public you can not access the project code - instead you can see 404 error message. 
+
+2. how to create a local repository -> 
+a. Open the GitHub desktop in your computer 
+b. Navigate to File Menu >> Add local repository 
+c. Provide the repository/folder location in the path textbox or go to the repo through navigation
+d. supply the location of the code where we do have and create the repository 
+e. After creating the repository => we can publish this repository to the GitHub .  
+
+f. Add a file into the local repository 
+g. See the changes in the GitHub desktop with the help of diff tool 
+h. Commit the changes to the local git server with a informative comment 
+=> local changed updated to the local server 
+I. push to the origin  => GitHub repo is the origin 
+
+

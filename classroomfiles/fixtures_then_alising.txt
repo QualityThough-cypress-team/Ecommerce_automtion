@@ -1,0 +1,48 @@
+We are understanding how to read data from fixtures 
+
+to read the data we are using hooks 
+before hook => only execute once before your first test
+beforeEach hook => executes before your every test 
+after Each hook =>execute after your every test 
+after hook => executes after  last test .  this is last step in test 
+
+Beforehook only execute with the first it block 
+if first it block is skipped then before hook also skipped 
+afterhook only execute with the last it block 
+if last it block is skipped then afterhook also skipped
+beforehook is used to provide the one time prerequisite which will execute before first test only 
+after hook is used to provide the onetime cleanup which will execute after last test only 
+beforeEach hook is used to provide the prerequisite for every test . this prerequisite will execute first then your test execute
+afterEach hook is used to provide the cleanup activity for every test. This will cleanup executes after every test . 
+after this hook code execution only your it block body will execute 
+
+before
+before Each for first test 
+first testbody 
+after Each  for first test 
+before Each for second test 
+second test body 
+after each for second test 
+before each for third test 
+3rd test body 
+after each for third test 
+after 
+=======================================================
+Fixture we need to read the data from external files 
+.json file 
+{
+"name": "ram",
+"age":30,
+"Qualification": "Btech",
+"year of passout":2000
+}
+example.json  => having the data , by using this data we need to do the testing 
+Data driven testing  => read data from external files
+where is this file cypress > fixtures >> example.json 
+
+to retrieve the data we need to use same as object properties 
+object.property 
+example.name 
+testdata.age
+cy.fixture() is used to load the data into test 
+

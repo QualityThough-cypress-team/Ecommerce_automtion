@@ -1,0 +1,92 @@
+Good Morning !!!!!
+
+Recap!
+
+We understand how to setup cypress - 
+We understand how to open the cypress test runner in the UI
+npx cypress open 
+we understand how to run the cypress in CLI 
+npx cypress run 
+-b browsername > chrome/firefox/edge  
+--headed => launch the browser in the CLI 
+We understand how to automate a manual test case 
+by using Cypress playground  => spy icon 
+
+locate the UI component by using spy icon with in the web page and copy the respective cypress command from the playground 
+paste it in the console   => F12 >> console tab in the developer option 
+
+you can understand each command we used to locate the element 
+cy.visit() //browse the webpage or visit the webpage in the cypress 
+cy.get() //it is used to locate the UI component in the web page 
+should // Is used to add an assertion 
+
+actions  => Click() 
+=======================================================
+studio commands 
+
+by default studio commands are not available in cypress 
+to activate this studio commands 
+we need to enter the experimentalStudio:true, 
+in cypress.config.js file 
+then only we can activate torch icon for your describe block or it block .
+
+1. if mouseover on the describe block  in the test runner then you can able to see a torch icon to add a new test => new it block 
+enter the web url and record the customer actions 
+right click and add assertions => add verifications 
+
+2. if mouseover on the it block in the test runner then you can able to see a torch icon to add a test step to the existing it block 
+record actions like customer 
+right click and add assertions 
+======================================================
+More assertions for your easy understanding the verifications in the cypress.
+
+We want to understand what are the css selectors we would like to use in cypress to locate the element. 
+=> browser developer options 
+=> selectorshub /chropath ....etc
+=======================================================
+1. npx cypress open  in the project terminal  of the VScode 
+
+it.only() // this test case only participate in the execution 
+howmany onlys we do have those many tests executed in the test run 
+
+it.skip() //eliminate this test from execution queue
+	
+record the assertions and understand new assertions 
+
+have.text => exact text match with the given text 
+contain => match the text with the given text
+be.visible => is this element visible to the customer or not 
+
+HTML  => hypertext markup language
+<html> <h1>
+ 
+CSS => cascading style sheets
+colors 
+padding 
+
+beautifying your page 
+ 
+JavaScript  =>  JS
+provides actions or functionality 
+
+
+
+As part of cypress we need to under 4 basic locators or selectors from CSS 
+1. tag name selector  => cy.get('h1') // html tags 
+2. Id selector  => cy.get('#email1')
+3. Classname selector  => cy.get('.classname')
+4. Attribute selector => cy.get('[testid='123']')
+
+
+
+
+
+
+
+
+
+
+
+
+
+

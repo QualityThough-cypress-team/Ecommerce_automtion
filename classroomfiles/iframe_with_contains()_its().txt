@@ -1,0 +1,15 @@
+Good morning !!!!!
+iframes => is a frame which we can have a internal dom object.
+<iframe>
+
+we need to automate this- to do so earlier days we do have cypress-iframe plugin 
+npm install cypress-iframe
+
+1. plugin is only used for one iframe , more than one iframe it will get fail to load the iframes.
+2. direct Jquery contents() method to retrieve the html content of iframe and filter with body tag 
+const body = iframe.contents().find('body')
+this from jquery 
+3. its() used in cypress to work with iframe 
+   cy.get('iframe').its('0.contentDocument.body).then('body') =>{
+cy.wrap('body').find()
+})

@@ -1,0 +1,154 @@
+Good Morning !!!!!
+
+We will understand 
+1. Ecommerce project 
+2. GitHub 
+3. Fixtures in cypress 
+
+=> ecommerce is a domain which is used to deliver the purchased goods to your door step. 
+online shopping . 
+
+amazon, flipkart, myntra,swiggy,zomato etc...
+=> in this ecommerce domain we do have couple of important keywords .
+
+
+Browse the below URL for ecommerce project :
+
+https://github.com/nopSolutions/nopCommerce
+
+
+front end module : 
+
+1. Customer => can visit the website 
+            => can search for the products or items 
+            => can able signup/login to purchase  the item or product 
+               MY account or my profile  => 
+               => add to shopping cart (cart)
+               => save for later 
+               => add it to the favorites 
+               => complete the order 
+                  => payment mode 
+                  => Address 
+                  => contact number 
+               => Order history 
+               => Track order 
+               => cancel  the order 
+               => return or refund 
+
+             => As a guest also you can purchase in some websites  => by providing the contact number and address 
+         
+As a customer what ever you can do on your ecommerce portal that comes under front end module.
+=> 
+
+Online shopping is a form of electronic commerce which allows consumers to directly buy goods or services from a seller over the Internet using a web browser or a mobile app.
+
+
+Front end application: 
+1. Registration 
+2. Login 
+3. Search 
+4. Search results page (SRP)
+5. Categories and sub categories 
+6. Display types - grid /list view
+7. Left side navigation menu 
+8. Tags 
+9. Wishlist or favorites 
+10. Product details page (PDP) 
+11. Product specifications 
+12. MY account or profile page 
+13. Checkout
+14. Address selection 
+15. discount coupons /coupon codes 
+16. Gift vouchers
+17. Logout 
+========================================================
+Admin module or backend module 
+
+this module not visible to the customer 
+
+"Welcome to your store!
+Can’t wait to start accepting orders? Let us show you how to set up your store fast and easy. The steps below describe the most important settings for the online shop. With our tips on each page you will see how clear this process is. You will be ready to start selling immediately after you go through these steps. So good luck!"
+
+
+Features : 
+
+1. Personalize your store 
+2. Add your store information
+3. Setup shipping 
+4. Setup Payments 
+5. Setup Taxes 
+6. Setup Email accounts 
+7. Create products 
+8. Catalog  >> 
+      Go throught he below link to start working on nopcommerce admin : 
+https://docs.nopcommerce.com/en/getting-started/admin-area-overview.html
+All UI components along with their functionality explained in the documentation
+
+1. Catalog requirement document  exist at "https://docs.nopcommerce.com/en/running-your-store/catalog/index.html"
+2. Categories requirement document exist at 
+https://docs.nopcommerce.com/en/running-your-store/catalog/categories.html
+3. Adding a product requirement document exist at 
+https://docs.nopcommerce.com/en/running-your-store/catalog/products/add-products.html
+=================================================================================
+GitHub  => 
+1. GitHub desktop 
+https://desktop.github.com/download/
+
+2. GitHub account creations
+https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
+ 
+
+
+
+
+             
+2. Administrator  => His responsibilities 
+                 => he need to maintain the website for the customers 
+                => Listing the products  in the website 
+                => Assign the product to a respective category for easy filtering 
+                => Add some tags  => awesome product 
+                                  => New Arrivals 
+                                  => Buy1get1 
+                                  => 50% 
+
+                => Sales => orders  => per day 
+per product 
+per category 
+per week 
+per month 
+cancelled orders 
+
+to maintain a website we need few more pages 
+ => product reviews 
+ => product specifications  => 
+     colors .sizes 
+     RAM /ROM / Different colors 
+ => Stock  => SKU => stock keeping unit  -> unique number representing the product 
+ => Product image / videos etc...
+
+Like this we need to understand e commerce project in a very  extensive way. 
+
+so that you can keep this project in your resume with manual + automation experience. 
+
+I will provide you a basic demo ecommerce application for your basic understanding  ! once this is done in the next lecture We will parallelly provide you some basic demo to create your own ecommerce application for free (  60days)
+========================================================
+Mean while we need to  explore an ecommerce application by taking the help of open source ecommerce platform => nopcommerce.
+
+this nopcommerce is a dotnet based open source ecommerce platform 
+
+nopCommerce is a fantastic open-source, stable, and super extensible eCommerce platform based on cross-platform .NET Core! It's perfect for any size business.
+
+
+=================================================================================
+Tasks to be completed before next lecture: 
+1. GitHub account creation and share your GitHub account to your councillor
+2. Download and install the GitHub desktop 
+3. Login to the GitHub desktop with your  credentials. 
+4. Explore nopcommerce front end and back end application by doing some actions
+5. Go to the documentation for catalog/categories & products
+================================================================================= 
+
+
+
+
+

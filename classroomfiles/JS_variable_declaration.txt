@@ -1,0 +1,47 @@
+Good Morning !!!!!
+
+Recap!!!!!
+
+Few actions commands and then we do have a basic understanding on how we can run JS code in a browser console. 
+
+1. open a browser 
+2. open the developer options  => F12 /Inspect the element / Settings  / more tools  / developer options 
+3. Console Tab with in the developer options 
+
+4. In this console tab , you can execute the JS code by pressing enter in the console after you JS code 
+
+console.log("your statement", x) 
+x is known as variable . 
+we can change this value 
+
+We can define the variables in 3 possible ways 
+
+var x=10; oldest process to define a variable => 2015 or before 
+
+let y =20;  // just it is a better usage compared to var
+
+const z=100; // it is used to define a  constant value . which can not be changed in the future. 
+
+suppose pi =3.14  //  by any change this is not suppose to be changed . 
+
+in this case we can define variable with const
+
+1. What is blocked scope => 
+with in the {} you are not suppose to do any things 
+redeclare with in the block scope is not possible for const 
+2. declaration  => let x , var y, Define the variable name but not assigned any value . 
+3. initialization => x=10; Assigning the value to the variable 
+4. var, let and const  => three possibilities we do have to define a variable in Java script
+5. We need to understand var . this is only for your interview sake . why because this is oldest procedure to define the variable (<2015/ beforeES6) 
+	
+
+
+var can redeclare /reassign / hoisting  etc... 
+let /const  => both of the based on the need
+
+const =>  values that do not change in the future 
+let  => value that may  change in the future 
+
+const name=your value  // do not change in the future 
+let age= 23 //do change in the future 
+age 24

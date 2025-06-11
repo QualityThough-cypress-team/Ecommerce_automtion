@@ -1,0 +1,33 @@
+Good Morning !!!!!
+
+Operator : 
+
+1. Arithmetic operator => mathematical operations will perform with the help of these symbols. 
+
+x=10
+y=10
+symbols useful for mathamaterical operation 
+
+sum= X+y =>
+x-y
+x*y
+x/y =>
+x%y =>
+
+101=> 5
+100
+===
+101
+
+100 =>  
+011 => 3
+001 => 1
+====
+011
+
+2^0 =>1
+2^1 =>2
+2^2  => 4
+
+
+

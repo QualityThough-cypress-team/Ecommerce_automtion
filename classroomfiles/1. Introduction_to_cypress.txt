@@ -1,0 +1,110 @@
+
+Good Morning !!!!!
+
+We are trying to understand how to automate a web application by using cypress automation tool.
+
+Cypress is a modern web automation tool ! =>
+
+Chromium  => chrome/edge /canara/electron 
+Firefox => firefox 
+Webkit  => safari 
+
+If you are testing the application on multiple browser then that testing is known as browser compatibility testing 
+cross browser testing 
+main aim is to check all your UI +functionality working fine in the different browsers. 
+
+=> We need to understand specialities of the cypress 
+1. Visual debugging  => 
+2. Timetravel 
+3. Auto wait  => for your component before perform assertion 
+assertion is nothing but adding verification step 
+Expected result  => Assertion 
+4. Retries  => cypress will retrie when it failed first time 
+=> flakieness  => not stable 
+5. Easy integration with CI tools  => continuous integration 
+=> 
+6. Easy integration with JIRA => 
+automated my cypress  => create defect in JIRa when your test fail. 
+7. Easy integration with Communciation channels like Teams 
+=======================================================
+Cypress is a modern web automation tool and it is fully baked . 
+
+cypress will be ready with in couple of mins  => 
+
+1. Pre requisites 
+a. nodejs =>  downloaded in your computer / Install the nodejs 
+Nodejs is used to run your javascript code  => 
+cypress developed in java script 
+
+java script run time => it will execute or run javascript programs 
+
+> node -v
+v22.15.0
+> 
+
+>npm -v 
+=> fetch all the modules required to run cypress 
+
+
+npm => node package manager  => 
+
+install 
+upgrade 
+
+
+b. VScode  => IDE (integrated development environment ) 
+Download and install 
+c. Create a project folder  => ecommerce 
+d. supply this ecommerce folder to the VScode 
+e. Open the terminal in the ecommerce 
+
+to install cypress  => 
+npm install cypress --save-dev => developer  version 
+npm install cypress  => released version 
+npm install cypress --save-dev
+
+a. a folder with the name node_modules  => 
+175 packages copied into your project folder 
+b.  package.json  => a project level file 
+a place holder to keep all your project information 
+1. Installed packages 
+2. your project name 
+3. GitHub url 
+=> npm init 
+=====================================================
+How to run cypress in UI mode  => user interface 
+how to run cypress in CLI mode command line interface
+
+npx  => node package executor  => this will execute the required packages to run your application 
+cypress.config.js  => javascript 
+this file contains all the configurations for the cypress 
+project  >> Cypress  >> support  => 
+a. e2e.js => pre requisites to run before your actual test
+b. commands.js  => custom commands 
+cypress  >> fixtures =>
+example.json  => test data 
+
+do have key value pairs:
+{ 
+"name" : "Ram",
+"Qualification":"Btech",
+"Year of Passout":"2000"
+}
+npx cypress run  => CLI 
+npx cypress open  => GUI  
+
+
+- electron
+ - chrome
+ - chromium
+ - chrome-for-testing
+ - edge
+ - firefox
+
+Tasks to be done:
+
+1. Install the cypress in your computer 
+2. Run at least one test case in the UI mode 
+3. Run  the tests in CLI mode in headless 
+4. Run the tests in CLI mode in headed mode 
+5. Run the tests with different  browsers 

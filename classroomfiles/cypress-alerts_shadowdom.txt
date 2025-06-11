@@ -1,0 +1,55 @@
+Cypress cloud => 
+GitHub integration => 
+We need to understand some important UI components
+a. shadow doms 
+b. iframes
+c. Webtables
+d. popups /alerts
+
+these ui components are not directly automated by cypress 
+we can call them advanced UI components automation in cypress 
+=> parallelly we can understand  design patterns to build the frame work. POM Page object model 
+
+=> BDD frame work => Cucumber => Given when then 
+=> GitHub Actions  => parallel execution 
+=> API testing  => cy.request() 
+=> DB testing 
+cypress cloud  => 500 test executions => demo account for 14 days => 
+a. JIRA integration 
+b. Teams integration 
+c. gitactions  => CI lecturers 
+=======================================================
+Shadowdom => to provide extra security developer provide this facility the code . 
+
+1. add a shadow() to the component where we see shadow-root => only applied to the element
+
+2. Add a {includeShadowDom:true} option to the test case 
+it block => this is only  specific to the test case exist in the spec file 
+
+3. Add a {includeShadowDom:true}option to the testsuite
+this is only specific to your test suite exist  in the spec file 
+
+4. Add a {includShadoeDom:true}option to the cypress.config.js  //global setting applicable for all the spec files exist in the project folder 
+========================================================
+if there is any nested shadow roots better to use testcase level settings 
+========================================================
+2. alert :
+
+alert with simple ok button => by default it can be taken care by cypress 
+
+alert with ok/cancel button 
+ok will be by default 
+but you need to make some changes to the cancel operation 
+
+window alert with interaction 
+
+window alerts will auto accepted by cypress 
+
+cy.on("window:alert",(text)=>{
+//play some assertions in the text we received
+expect('text').eq('I am a JS Alert')
+
+})
+
+
+ 

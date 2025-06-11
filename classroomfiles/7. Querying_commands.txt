@@ -1,0 +1,26 @@
+Good Morning !!!!!
+
+Recap !!!!!
+
+We understand how to write you own selectors by using CSS  selectors 
+1. Basic CSS selectors 
+2. combinator CSS selector 
+3. Attribute CSS selector 
+=> [class|="top"] 
+class="top test"
+class="top-test"
+
+=> [class^="top"] whose value starts with top 
+=> [class$="test"] whose value ends with test
+
+Now Cypress do have navigational commands to do the above selection with in the cypress -  there is no much dependency on css combinator selector or attribute selectors 
+
+=> Cypress Querying commands  => cy.get()  
+=> cypress navigational/traversal commands 
+=> window commands 
+=> Querying commands 
+1. get is used to locate the element by using css selectors 
+
+
+
+ Best Practice: Use data-* attributes to provide context to your selectors and isolate them from CSS or JS changes.

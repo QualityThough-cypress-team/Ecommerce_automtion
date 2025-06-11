@@ -1,0 +1,73 @@
+Good Morning !!!!!
+
+We understand different data types :
+1. primitive data types => single value
+Number = integers and floating values 
+String  = ''/""  character sequence -="ram"
+Boolean = true / false 
+Undefined => if we declare the variable and do not assign a value the by default it consider it as undefined 
+let a;
+console.log(a) //undefined 
+let x=null // 
+BigInt = large integers 
+
+2. non primitive or reference datatypes => multiple values
+Arrays :  group of elements or values with different data types we can store with the help of arrays . 
+let fruits = ['apple','Banana','mangoes']
+
+Object :  collection of key value pair 
+
+let person ={
+name:"ram',
+age:30,
+Qualification:"btech"
+
+}//properties of a person 
+
+function:  is a reusable code block with argument /without arguments => return a value 
+
+//definition of the function:
+function myFunction(arg1,arg2,arg3){
+return arg1+arg2*arg3
+
+}
+
+myFunction(10,20,30) // 10+20*30
+myFunction(20,20,0) // 20+20*0
+
+function greetings(){
+return "Welcome to my function"
+}
+greetings() // calling the function  // welcome to my function will be printed . 
+
+
+// string methods => already JS provided couple of useful functions to do your actions.
+As a customer if you write mix of small and caps letter with in your textbox 
+
+let fullName="RAM prasad" 
+
+toUppercae
+toLowercase
+
+
+Array methods : 
+
+let evenNumbers=[2,4,6,8,10,12,14,16,18,20]
+evenNumbers.length()
+evenNumbers.indexOf()
+
+arrow function: () => 
+
+
+
+
+
+
+
+
+
+
+// array methods  =>
+
+
+

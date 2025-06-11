@@ -1,0 +1,60 @@
+Good Morning !!!!!
+
+Recap!!!!!
+
+1. We understand how to locate the element by using querying commands 
+cy.get()
+id selector  = #id
+classname selector = .classname
+classnam1 classname2 =.classnam1.classname2
+attribute selector =[attribute="value"]
+^/|,$
+tagname selector = tagname 
+
+to travel with in the UI components (with in the DOM)
+we learned traversal commands 
+
+children/closest /parent/patents /parentsuntil/sibblings 
+first()
+Last()
+eq(index)//indext start with zero
+eq(-1) // last element 
+prev()
+next()
+preAll()
+nextAll()
+PrevUntil()
+nextUntil() 
+===================================================
+We do have different UI components => 
+1. textboxes  => we can type content 
+2. dropdowns => you can select 
+3. buttons => click 
+4. checkboxes => check /uncheck 
+5. radio buttons => select / deselect 
+6. Scroll => scroll until you idneitfy the element 
+
+7. Accordions 
+
+cy.contains()
+cy.get('form').within(()=>{
+
+cy.root() //form
+
+})
+cy.root() //html
+
+baseURL:'https://example.cypress.io',
+
+
+now I want to browse  => Traversal URL 
+cy.visit('https://example.cypress.io/commands/traversal')
+
+if baseURL configured in your project then no need to copy the entire URL instead you can paste 
+
+cy.visit	('/commands/traversal')
+the Original URL you can traceout is 
+baseURL+you supplied content 
+https://example.cypress.io/commands/traversal
+
+Blur a focused element. This element must currently be in focus. If you want to ensure an element is focused before blurring, try using .focus() before .blur().

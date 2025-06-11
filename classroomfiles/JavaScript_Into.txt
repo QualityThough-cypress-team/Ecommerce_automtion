@@ -1,0 +1,12 @@
+JavaScript => 
+how to run JavaScript code in  browser 
+in  VScode 
+
+1. in browser 
+
+open a browser 
+inspect the element /F12 / browser developer options 
+
+in the developer options lets click on console 
+
+here you can right your JS code and run the code 

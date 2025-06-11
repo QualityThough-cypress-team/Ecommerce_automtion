@@ -1,0 +1,73 @@
+Good Morning All
+
+Recap !
+
+1. We understand how to setup cypress with the help of node 
+2. We understand how to launch cypress from GUI mode and CLI mode 
+3. We understand how to conduct browser compatibility testing with cypress . 
+
+Before jumping on to locators we need to understand 
+cypress studio and cypress playground to locate the element and add assertions 
+
+
+Testcase#1 : Verifying the Querying Option in the commands dropdown  
+
+1. Open the website https://example.cypress.io 
+2. Click on Commands dropdown and select or click on Querying option 
+
+check /verify Querying Page opened or not ? 
+
+Expected result : Querying page should be opened with the URL "https://example.cypress.io/commands/querying" 
+and Heading -  Querying 
+
+Testcase#2 : Verifying the Traversal Option in the commands dropdown  
+
+1. Open the website https://example.cypress.io 
+2. Click on Commands dropdown and select or click on Traversal option 
+
+check /verify Querying Page opened or not ? 
+
+Expected result : Querying page should be opened with the URL "https://example.cypress.io/commands/traversal" 
+and Heading -  Traversal
+
+Testcase#3 : Verifying the Actions Option in the commands dropdown  
+
+1. Open the website https://example.cypress.io 
+2. Click on Commands dropdown and select or click on Actions option 
+
+check /verify Querying Page opened or not ? 
+
+Expected result : Querying page should be opened with the URL "https://example.cypress.io/commands/actions" 
+and Heading -  Actions 
+
+Testcase#4 : Verifying the Window Option in the commands dropdown  
+
+1. Open the website https://example.cypress.io 
+2. Click on Commands dropdown and select or click on Window option 
+
+check /verify Querying Page opened or not ? 
+
+Expected result : Querying page should be opened with the URL "https://example.cypress.io/commands/window" 
+and Heading -  Window
+
+Testcase#5 : Verifying the Homepage Heading - Kitchen Sink
+
+1. Open the website https://example.cypress.io 
+ 
+
+check /verify Querying Page opened or not ? 
+
+Expected result : Heading should be Kitchen Sink
+
+
+Options in cypress to automate above test cases: 
+
+Option#1: We need to take the help of Playground => 
+
+spy icon exist in the test runner for every spec =
+
+https://docs.cypress.io/app/guides/cypress-studio
+
+
+
+

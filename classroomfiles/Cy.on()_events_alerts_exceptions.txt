@@ -1,0 +1,58 @@
+Good Morning !!!!!
+
+Event handling or error handling 
+alerts handling in cypress 
+1. alert => ok 
+2. confirm alert => ok, cancel 
+3. prompt  => entering the input in the alert
+
+Cypress handles the alert automatically and click on ok.
+
+for testing we need to understand what is the message it display in the alert. to do so 
+we need to take the help of cy.on()
+cy.on("window:alert",(msg)=>{
+
+expect(msg).to.equal("actualmessage")
+})
+cy.on("window:confirm", (msg)=>{ // ok by defaault 
+expect(msg).to.equal("actualmessage")
+})
+cy.on("window:confirm",(msg) => {
+expect(msg).to.equal("actualmessage")
+return false // automate cancel behavior 
+})
+
+cy.on("window:prompt", (message)=>{
+cy.window().then(win)=>{
+cy.stub(win,'prompt').returns(null)//return cancel 
+
+
+})
+
+
+})
+
+
+unhandled exception in cypress: 
+
+multiple exception you want to handle use cypress.on
+Cypress.on('uncaught:exception', (err, runnable, promise) => {
+
+single expection in your test : 
+
+  cy.on('uncaught:exception', (err, runnable) => {
+
+only when a unhanled promise returns false then only 
+we do add third argument 
+  cy.on('uncaught:exception', (err, runnable, promise) => {
+
+iframe : 
+
+a window which display another website related information 
+
+
+
+
+
+
+

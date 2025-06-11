@@ -1,0 +1,165 @@
+Good Morning !!!!!
+Recap : 
+
+1. we understand Basics of cypress
+=> how to setup cypress in your local computer
+=> How to use playground to traceout the UI components 
+=> how to use studio commands to record the  scripts 
+    => record the test step  => Record the new command with in the  existing testcase
+    => record the entire new test => record the new test case
+
+=> How to locate the  element  => selectors 
+   => CSS selectors  => 
+   1. Playground
+   2. Developer options  => inspect 
+   3. selectorshub/chropath 
+       div[class='container'] h1
+
+         a. Tagname selector= tagame
+         b. class name selector= .classname 
+             .classname.classname2.classname.3 
+         c. ID selector  = #id
+         d. Attribute selector = [attribute="value"]
+               combinator selector
+
+b. Perform an action 
+
+  Based on the UI element we can able to perform actions 
+1. Querying commands => is used to located the element 
+   cy.get("selector").action() 
+   cy.contains("text").action()
+   
+   click()
+rtclick()
+dblclick()
+type()
+type(,{delay:2000})
+select()
+check()
+uncheck()n
+
+traversal commands to identify the element 
+navigational commands to use the browser options like 
+go(forward)
+go(backword)
+reload()  
+reload(true)
+
+
+
+3. Assertions : Verification of perticual outcome 
+
+should("have.text","text")
+should("have.value","value")
+should("be.visible")
+should("be.enable")
+should("be.not .enable") 
+have.class 
+have.attribute 
+like this many assertions 
+
+if you want to automate any manual test case 
+
+1. Locate and navigate to that UI component
+    querying commands 
+    traversal commands
+    Navigational commands  
+2. If there is any action you can perform on it
+    Action commands  
+3. Add an assertion to check the outcome 
+   Assertions 
+
+=> basically we can automate any page by using above 3 steps . 
+
+but it is not sufficient to automate any website. 
+website contains many pages => end to end testing we need to learn few more things 
+
+1. Understand the application knowledge /Domain knowledge 
+ecommerce domain => one project - 
+I will explain domain  => 
+you can write manual test cases for those ecommerce functionalities 
+=> 15min of time in our lecture contributed for this domain knowledge.
+
+we need to automate the ecommerce application 
+2. Different tools used in the project 
+=> JIRA /QC /ASana ...etc
+I will create a JIRA and share the access to you. 
+We can create all your requirements in the  Backlog - JIRA User stories 
+respective userstories we can convert into test cases 
+execute these test cases and see the result in the manual test case 
+
+we can automate these test cases by using cypress 
+
+=> test management tool  => Zephyrscale / AIO ..etc 
+
+
+3. Automating the manual tests with in the framework 
+
+cypress is a automation tool 
+
+Framework is required 
+
+=>JavaScript  => done 
+
+1. Cypress folder structure => done 
+    cypress 
+        Fixtures => examples.json 
+        support 
+               => commands.js 
+               => e2e.js 
+     cypress.config.js 
+     package.json 
+
+2. fixtures as part of frame work  => fixtures folder 
+cy.fixture() // this is used to read the test data from the external files 
+cy.readFile()
+cy.writeFile() 
+
+3. Custom commands in the cypress 
+    whenever we do have repeated statements in your test files that steps we can make a command in your cypress 
+that command is known as custom command 
+
+cy.login("","") {
+}
+4. POM => design pattern 
+we classified our project into pages 
+each page we do have class file in this class file we can store all locators script 
+pageName.js 
+
+and we create test file 
+pageTest.cy.js  => 
+here we can create test file 
+either in the regular format 
+BDD 
+
+5. Cypress cloud  => another product provided by cypress 
+=> commercial involved  => 
+paid version 
+=> detailed reports for the runs 
+=> GitHub integration 
+=> teams integrations 
+=> if you commit a change that will trigger automatically and provide the result 
+=> CI integration => gitactions 
+=> parallel execution 
+
+6. BDD frame work  => behavioral driven development 
+BDD Test = into automation 
+Given 
+When 
+Then 
+Manual test case into BDD test case  => cucumber 
+
+then convert this BDD tests into cypress automation 
+
+
+pre requisites : 
+ecommerce application 
+JIRA 
+AIO
+GitHub 
+Gitactions 
+
+=> we can do slowly one after another along with your cypress frame work 
+1. ecommerce application 
+2. GitHub 
+3. Folderstrcuture  / Fixtures () 

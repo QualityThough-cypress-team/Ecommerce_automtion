@@ -1,0 +1,29 @@
+We understand how to use copilot or chatgpt to generate the JS code. 
+
+switch statement  ->
+if elseif else => 
+if else 
+if 
+if 
+   if 
+      if 
+          if 
+=====================================================
+Loops : 
+
+continuous execution of the code until the condition fail. 
+
+for loop : 
+
+
+for(let i=1 ; i<=10 ; i++) //incremental operator 
+{
+
+console.log("I value is :", I) //first time
+}
+
+for(let i=15 ; i>=10 ; i--) //decremental operator 
+{
+
+console.log("I value is :", I) //first time
+}

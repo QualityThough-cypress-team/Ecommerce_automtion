@@ -1,0 +1,56 @@
+Good Morning !!!!!
+
+Recap !!!!!
+
+to fetch the information from web page 
+
+like cy.get() to locate the element by selectors
+cy.contains() to locate the element by provided text 
+cy.get('form').within(()=>{
+
+// scope of the within  only for the inside elements
+cy.root() //form 
+})
+
+// outside  => cy.root() //  HTML
+====================================================
+1. tagname 
+2. classname 
+3. ID
+4. attribute selector
+5. contains('text') 
+6. data-cy or data-test
+======================================================
+traversal commands 
+
+it is used to locate the element by using few cypress in built commands. 
+
+
+index => eq(0) => first element 
+first() // select the first element in the results 
+last() // select the  last element in the result 
+eq	1) // select the last element in the result
+prev() //locate the previous element in the result 
+next() //locate the next element in the list 
+ 
+not() // find() //filter() 
+
+
+tomorrow we will start the Javascrpit  - 
+
+1. Scratch => 
+
+javascript how to run JS files in the browser
+in the vscode 
+
+2. what variable  => how to declare a variable in JS 
+var/let/const 
+3. data types  => 
+primitive datatypes 
+non primitive data types 
+4. class 
+import and export clasess 
+object creation 
+importing the methods  
+5. this/then 
+6. promises /closures in JS 

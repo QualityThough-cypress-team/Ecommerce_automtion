@@ -1,0 +1,62 @@
+Good Morning !!!!!
+
+Recap !
+
+We understand different HTML tags which are used to develop Web page 
+<html> 
+<head> 
+<title>
+<meta>
+<a href="https://qualitythought.in">
+<img source="", width=104, Height= 140 >
+</html>
+
+CSS => cascading style sheets  => 
+<style>
+
+</style> 
+JavaScript 
+<script> 
+
+</script> 
+
+===================================================
+CSS selectors and their important w.r.t development 
+
+we can use from tomorrow  => 
+
+Identify the elements by using 
+tagname selector  => 
+<body> 
+body so that respective css will be applied . 
+
+if you want to locate a class name we need to add a prefix .
+if you mention . css will understand that I need to apply these styles to the particular class name you will mentioned after . 
+
+# denotes it is ID 
+
+1. Tagname selector  => directly mention the tagname
+2. classname selector => add a prefix .to identify the class name 
+3. ID selector  => add a # prefix to identify the ID selector 
+4. attribute selector  => mention with in the [attributename="value"]
+[data-toggle="dropdown"]
+
+
+sample html code for commands dropdown in the example.cypress.io
+
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Commands <span class="caret"></span></a>
+
+
+ 1. As manual a tester you are locating the element with your naked eye and intelligence 
+we need to add this intelligence to your cypress automation
+so that we need to locate the element with in the webpage by using css selector like you.
+
+
+css selectors  => 
+
+
+1. locate the element with tag name 
+
+
+
+=====================================================

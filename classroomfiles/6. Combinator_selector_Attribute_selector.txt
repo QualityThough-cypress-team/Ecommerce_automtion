@@ -1,0 +1,71 @@
+Good Morning !!!!!
+
+Recap : 
+
+We understand how to locate element by using the CSS selector 
+
+1. tag name selector  => 
+cy.get('tagname')
+cy.get('input')
+cy.get('html')
+cy.get('li')
+cy.get('ul')
+cy.get('nav')  
+
+//<tag class="navclass">
+//<tag id="123test">
+//<a href="https://qualitythought.in">
+either you need to insepect in the browser 
+by using context menu or right click on the page 
+
+or go with Ctrl+U page source 
+
+2. ID selector 
+cy.get('#123test')
+3. classname selector 
+cy.get('.navclass')
+4. Attribute selector 
+cy.get('[href="https://qualitythought.in"]')
+=======================================================
+We need to some advanced css selectors to identify uniquely 
+or identify group items to do some loopings 
+
+1. descendent selector selects all the descendent items with in your html code 
+
+Descendant Combinator
+The descendant combinator matches all elements that are descendants of a specified element.
+
+div p {
+  background-color: yellow;
+}
+cy.get('div p') //descendent selector in cypress 
+
+
+Child Combinator (>)
+The child combinator selects all elements that are the children of a specified element.
+
+div > p { //selects all <p> elements that are children of a <div> element
+  background-color: yellow;
+}
+
+Next Sibling Combinator (+)
+The next sibling combinator is used to select an element that is directly after another specific element.
+
+Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+
+The following example selects the first <p> element that are placed immediately after <div> elements:
+
+div + p {
+  background-color: yellow;
+}
+
+cy.get('div+p')// locate the all results for div immediately we have a sibling p tag 
+
+a[role='button']
+id attribute is not available for this element
+name attribute is not available for this element
+document.querySelector("a[role='button']")
+"Commands"
+/html[1]/body[1]/nav[1]/div[1]/div[2]/ul[1]/li[1]/a[1]
+//a[@role='button']
+body > nav:nth-child(1) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(2) > a:nth-child(1)

@@ -1,0 +1,200 @@
+Good Morning !!!!!
+
+Recap : 
+
+We understand => 
+it.skip() to skip particular testcase from the execution queue 
+it.only() to execute only this test case 
+
+We understand folder structure  of cypress 
+
+Cypress  >> 
+     >> e2e  => sample.cy.js 
+              you can create all your end to end tests 
+     >> fixtures => example.json test data
+     >> support => 
+                e2e.js  => which will execute before your tests 
+                commands.js  => where you can create or overwrite your cypress commands 
+       
+     >> 
+cypress.config.js 
+package.json
+
+npm install  packagename 
+npx package open/start/run etc...
+
+npx cypress open  => to launch the cypress in GUI
+npx cypress run => to launch the cypress in CLI 
+
+In test runner UI we do have 
+1. specs  => this is placeholder to display all e2e specs 
+  specs.cy.js   => reside in e2e folder 
+
+2. Runs  => dedicated for cypress cloud 
+3. Debug  => dedicated for cypress cloud 
+4. Settings  => 
+             1. Project settings => cypress.config.js  
+             2. Device settings  => one time use 
+             3. Cloud settings  => future coverage 
+
+Selectors in cypress  => 
+
+selectors or locators are used to locate or identify  the location of the UI element. 
+
+as a manual tester how you locate a particular UI component the same way an automation tool also locate the element where it is present in the web page to do 
+we need to understand the location of UI component with in the page source . 
+CTRL+U in the webpage  => source code of the web page 
+
+Sample Source code for your reference : 
+
+<!doctype html> // starting point of your html 
+<> //this is called open tag
+</> // close tag 
+
+// <html> 
+<html xmlns:fb="http://ogp.me/ns/fb#" lang="en-US">
+//<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# zoomvideocall: http://ogp.me/ns/fb/zoomvideocall#">
+//<script> all your JavaScript code exist with in the script tag
+
+<script nonce="1QusFK0aRVac_GqgTbdgyQ">
+window.zmGlobalMrktId = "efe685d4a3e74c249bf3c752bf6eb76d" || null;
+window.zmGlobalMrktKey = "4AKSIDPKaQF9fIU6+7qa8nLCh+uP6UotxJ2QKJVWrvs=" || null;
+window['optimizely'] = window['optimizely'] || [];
+window["optimizely"].push({
+"type": "tags",
+"tags": {
+"zm_usr_id_sha256": window.zmGlobalMrktKey || ""
+}
+});
+</script>
+
+<script nonce="1QusFK0aRVac_GqgTbdgyQ">
+var optimizely = window["optimizely"] || [];
+optimizely.push({"type": "holdEvents"});
+</script>
+<script nonce="1QusFK0aRVac_GqgTbdgyQ" src="https://us06st2.zoom.us/static/6.3.34727/js/app/optimizely/helper.min.js"></script>
+<script src="https://explore.zoom.us/docs/js/optimizely/optimizely.js" nonce="1QusFK0aRVac_GqgTbdgyQ"></script>
+<script nonce="1QusFK0aRVac_GqgTbdgyQ">
+(function () {
+var optimizely = window["optimizely"];
+if (!optimizely || !optimizely.get) return;
+optimizely.get('utils').waitUntil(function () {
+// wait until default defined OneTrust OptanonWrapper function is defined
+return typeof window.OptanonWrapper !== 'undefined';
+}).then(function () {
+(function (origFunc) {
+window.OptanonWrapper = function () {
+origFunc && origFunc();
+var oneTrustConsentId = OneTrust.getDataSubjectId();
+var activeGroups = (OnetrustActiveGroups || '').split(',');
+activeGroups = activeGroups.filter(function (v) {
+return v !== '';
+});
+// send Optimizely events when Performance consent is given
+if (activeGroups.indexOf('C0002') > -1) {
+optimizely.push({
+"type": "tags",
+"tags": {
+"onetrust_id": oneTrustConsentId || ""
+}
+});
+optimizely.push({"type": "sendEvents"});
+}
+};
+})(window.OptanonWrapper);
+});
+})();
+</script>
+//page title will be captured by title tag 
+
+<title>Post Attendee - Zoom</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+<meta name="keywords" content="zoom, zoom.us, video conferencing, video conference, online meetings, web meeting, video meeting, cloud meeting, cloud video, group video call, group video chat, screen share, application share, mobility, mobile collaboration, desktop share, video collaboration, group messaging" />
+<meta name="description" content="Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zoom Rooms is the original software-based conference room solution used around the world in board, conference, huddle, and training rooms, as well as executive offices and classrooms. Founded in 2011, Zoom helps businesses and organizations bring their teams together in a frictionless environment to get more done. Zoom is a publicly traded company headquartered in San Jose, CA." />
+<meta property="og:type" content="activity" />
+<meta property="og:title" content="Join our Cloud HD Video Meeting" />
+<meta property="og:description" content="Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zoom Rooms is the original software-based conference room solution used around the world in board, conference, huddle, and training rooms, as well as executive offices and classrooms. Founded in 2011, Zoom helps businesses and organizations bring their teams together in a frictionless environment to get more done. Zoom is a publicly traded company headquartered in San Jose, CA." />
+<meta property="og:url" content="https://us06web.zoom.us" />
+<meta property="og:image" content="https://us06st3.zoom.us/static/6.3.34727/image/thumb.png" />
+<meta property="og:site_name" content="Zoom Video" />
+<meta property="fb:app_id" content="113289095462482" />
+
+HTML Tags : 
+
+<html> 
+<hader> </header>
+<title>  </title>
+<body> 
+<script> ... </script>
+//page body 
+
+
+</body>
+</html> 
+
+
+.html and open with any browse to see the output 
+
+HTML elements tell the browser how to display the content
+
+The <!DOCTYPE html> declaration defines that this document is an HTML5 document
+The <html> element is the root element of an HTML page
+The <head> element contains meta information about the HTML page
+The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+The <h1> element defines a large heading
+The <p> element defines a paragraph
+
+HTML links are defined with the <a> tag:
+
+<a> represents hyper link anchor tag 
+
+attribute name = "value"
+https://cypress.io  is nothing but attribute value
+
+href="https://example.cypress.io"
+
+<html lang="en">
+<meta charset="utf-8">
+<nav class="navbar navbar-inverse">
+    <div class="container">
+
+Note: 
+The link's destination is specified in the href attribute. 
+
+Attributes are used to provide additional information about HTML elements.
+
+HTML Images: 
+<img> </img>
+
+HTML images are defined with the <img> tag.
+
+The source file (src), alternative text (alt), width, and height are provided as attributes:
+
+
+All HTML elements can have attributes
+The href attribute of <a> specifies the URL of the page the link goes to
+The src attribute of <img> specifies the path to the image to be displayed
+The width and height attributes of <img> provide size information for images
+The alt attribute of <img> provides an alternate text for an image
+The style attribute is used to add styles to an element, such as color, font, size, and more
+The lang attribute of the <html> tag declares the language of the Web page
+The title attribute defines some extra information about an element
+
+CSS : 
+
+CSS is the language we use to style an HTML document.
+
+CSS describes how HTML elements should be displayed.
+
+
+
+
+
+
+
+

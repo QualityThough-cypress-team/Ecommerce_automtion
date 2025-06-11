@@ -1,0 +1,77 @@
+1. We understand how to connect with GitHub
+
+in this GitHub => 
+how to create a repo from GitHub desktop 
+how to commit the repo changes in the local server
+and then push the changes to origin 
+
+If you have a branch v1 and you have some changes in the branch v1 which are not exist in the master branch in this case we need to 
+1. create a pull request to merge the code from v1 branch to main branch 
+2. once pull request is created - repo admin will review your changes and then merge the code from v1 to main branch 
+
+// Cypress fixtures and hooks . 
+
+fixtures are used to load the external data into your test 
+cy.fixture('filename.json')// this filename should be avialble 
+cypress >> fixtures >>filename.json
+
+but in my test case as a pre requisite i want to load this testdata before my test execution. 
+
+in your manual test case there is pre requisite. that means before your start your testcase you have to execute these pre requisites. 
+
+to automate this with in the cypress we need to use cypress hooks 
+
+2 types of hooks in cypress => 
+1. execute before your test 
+before() // this will execute only once before  all tests 
+that means very first step  beforeHooks will execute 
+
+beforeEach() //cypress code 
+this hook will execute after before()hook and before every it block 
+
+
+2. execute only after your test 
+after() this is the last step in your test => after all tests (it blocks ) and afterEach()  we will execute only once) => this is used to cleanup activities.
+afterEach()
+this will execute after every it block . 
+
+
+before()
+beforeEach()
+it()
+afterEach()
+beforeEach()
+it()
+afterEach()
+after()
+
+cy.fixture() is used to read the data from the file 
+this should exist in cypress/fixtures/file name 
+once it is loaded we need provide a nick name for this data exist with in the file 
+that nick name we can provide you as aliasing name 
+as
+cy.fixture().as('data')
+
+data.username
+data.password 
+data.name
+data.email
+data.password
+data.age
+data.address
+data.xyz 
+cy.fixtures().then((data)=>{
+
+this.data=data // this step provide the access to the data outside of this fixture folder 
+
+
+})
+
+
+
+ 
+
+
+
+
+

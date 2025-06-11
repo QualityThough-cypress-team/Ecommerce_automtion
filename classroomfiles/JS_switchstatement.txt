@@ -1,0 +1,84 @@
+ 
+function is a reusable code block => with return value 
+
+function functionName(arg1, arg2, arg3){
+
+console.log("I am inside the function")
+return arg1+arg2+arg3
+
+}
+
+functionName(10,20,30)
+
+
+hello = function () {
+  return "Hello World!";
+}
+
+Arrow function => shortform of a function 
+
+c
+hello = function(){
+return "Hello World"}
+
+describe("name of the test suite",function(){
+
+})
+describe("name of the test suite",()=>{})
+
+//if statement  => 
+
+when you need to verify only one condition and only true condition you want to consider lets go with if condition 
+
+if (condition) { }// block of code will execute only when the condition is true
+
+if we have to consider both true and false then - use if -else 
+if (condition) {true - execute this block}
+else{execute this else block }
+
+if you do have multiple condition => 
+if (conditon1)// if it is true 
+if it is false consider the next else if 
+elseif (conditon2){} // this will execute 
+else if (codniton3) {} // this will execute 
+else if (conditon4) {} // multiple conditions 
+else {}  else will execute if all above conditions fails
+
+Please execute couple of examples with 
+arrow functions 
+functions 
+if conditions 
+if else conditions 
+Conditional statements - 
+1. if condition this will execute only when given condition is true .
+2. if -else condition => when condition is true then execute if block
+condition is false then execute else block 
+
+3. else - if => we do have multiple conditions then we need to use 
+if (condition1) :  true  if code block will be executed 
+else if (condition2) : true => first else if block will be executed
+else if (condtion3) : true => second else if block will be executed 
+else if (condition4): true => 3rd else if block will be executed 
+else if (condition 5) : true => 4th else if block will be executed
+
+...
+else => if all conditions are false then else block will be executed. 
+
+
+When to Use:
+
+Use if or if-else for simple conditions or ranges.
+Use if-else if for multiple conditions with complex logic.
+Use switch for comparing a single variable against many discrete values.
+
+We are done with conditional statements -  
+
+by using AI (chatgpt or copilot) 
+========================================================
+
+
+
+
+
+
+

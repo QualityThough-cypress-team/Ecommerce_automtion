@@ -1,0 +1,44 @@
+Good Morning !!!!!
+
+We understand => 
+
+How to use JavaScript for your cypress automation.
+1. Declaration of variables 
+2. Operators 
+3. Data types 
+4. conditional statements 
+5. Loops 
+6. Classes import and export 
+7. Strict mode to avoid the unnecessary errors 
+8. Promises  - then , this keywords 
+9. try and catch => error handling  - throw and finally 
+We will able to customize your cypress automation with the help of JS . 
+
+=> what is promise ?
+is confirmation accept/Reject for future outcome 
+
+if it is true =>  do this 
+if it is false => do this 
+but this true or false confirmation not yet present , it depends on the future outcome. 
+
+we understand chocolate example : 
+
+You ask for a chocolate , mom says that if available I will give it you. 
+
+mom , needs to check is chocolate available or not , to do so some time is required - 
+after this check only I can confirm whether I am giving the chocolate or not.
+
+giving the chocolate is promise => if chocolate is available =>  I can give 
+if it is not available => I cant => 
+I replicated this example with in JS => by using promises.
+
+new promise(resolve, reject)
+resolve => true => then to resolve the condition 
+reject => false  => catch to  get the error message for rejection. 
+
+suppose if we are handling apis  => application program interfaces. 
+without UI we can do the transaction. 
+That we  access the URI to do some transaction => 
+if service is available we complete this promise 
+if service is terminated we can not complete this promise 
+

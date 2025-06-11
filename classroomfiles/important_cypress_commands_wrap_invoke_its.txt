@@ -1,0 +1,36 @@
+We are understanding how to read the data from external sources . 
+cy.fixture().as() => aliasing 
+cy.fixture().then(function(data) {
+
+if you want to use the data outside of this  then block then we have to provide this context  to the data 
+this.data = data ; // you can use this.data out side of this fixture 
+})
+
+it("load the data from then ",function() {
+
+cy.log("my test data", this.data)
+
+})
+
+static approach => 
+cy.fixture() => load the data from fixtures folder 
+
+readFile()
+dynamically load the data when it is called 
+load the data from cypress root directory =>
+as()
+then()
+.its() 
+
+Cy.wrap() is used to wrap the js content into cypress chainable object 
+all the assertions we can apply to this wrapped content
+
+its() is used to handle the properties only 
+invoke() is used use to handle the functions 
+	
+ invoke() very important command to play with html objects
+change the behavior of objects from visibility not visible or not visible to visible by using jquery show 
+
+
+writeFile()
+		

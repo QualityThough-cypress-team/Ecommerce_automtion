@@ -1,0 +1,50 @@
+We need to work on 
+1. Custom commands 
+2. cypress cloud 
+
+What is custom commands in cypress?
+reusable code we can create as a custom command .
+
+1. Login 
+2. signup 
+3. search
+4. clickon button 
+
+cypress >> support 
+
+             commands.js 
+
+you can create a new custom command 
+or overwrite existing cypress command 
+
+There are two API available for adding custom commands:
+
+Cypress.Commands.add() - use to add a custom command to use when writing tests
+Cypress.Commands.overwrite() - use to override an existing built-in Cypress
+cy.visit() it is already exist - to launch the browser with definedURL 
+
+but now if you change this with new overwrite() api that is new command behavior 
+
+now cy.visit() // is working with the new code in your project
+
+Cypress.Commands.add('clickLink', (label) => {
+  cy.get('a').contains(label).click()
+})
+Cy.prress.Commmands.add('enterData',(type,input) =>{
+
+cy.get('input').contains('type').type(input)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+

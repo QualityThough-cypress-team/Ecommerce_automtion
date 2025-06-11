@@ -1,0 +1,50 @@
+Good Morning !!!!!
+
+Recap!!!!!
+
+We understand how to perform 
+actions with in different ui componets 
+textbox  => .type() // slow typing with {delay:100}
+{force:true}  
+
+click() // for all clicks we can use click() 
+
+=> centre 
+top right /left /top
+bottm right /left /botton 
+right centre/left centre /centre 
+
+=> coordinates  => 
+x, y   positions for your element 
+
+=> force:true
+multiple:true  // sibling/parent/next/first/last methods 
+suppose you want to click on all links exist in the page 
+cy.get('a').click()// fail  - so many links available for tag name a 
+cy.get('a').click({multiple:true}) // 
+cy.get().click({force:true})
+
+=> focus() /blur() 
+=======================================================
+double click() => 
+dblclick() 
+=======================================================
+radio button => check 
+checkboxes  => check
+uncheck
+========================================================
+Dropdown => 
+<select >
+.select('text') //Select the option with the text apples
+// yields <option value="456">apples</option>
+cy.get('select').select('apples').should('have.value', '456')
+.select('value')
+<select>
+  <option value="456">apples</option>
+  <option value="457">oranges</option>
+  <option value="458">bananas</option>
+</select>
+
+
+// yields <option value="456">apples</option>
+cy.get('select').select('456').should('have.value', '456')

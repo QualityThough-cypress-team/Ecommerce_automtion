@@ -1,0 +1,59 @@
+Good Morning !!!!!
+
+We understand different loops 
+for loop 
+for in 
+for of 
+while loop 
+do -while 
+========================================================what is class ?
+how to use one class methods , variable in another class 
+how to create an object for the class.
+how to use methods , functions exist with in the class = reference to object. 
+========================================================
+Page object Model => POM design pattern .
+
+like we need to classified your project code or locators in different class files .
+each page locators saved under one pagename.js
+we do have respective test.cy.js file to import the locators exist in the respective class file. 
+=======================================================
+1. what is class ?
+2. how to use the methods, constructors, variables exist in the class. 
+
+class className {
+
+var x=10
+let y=20
+const pi=3.14
+
+function add(x,y){
+retrun x+y
+}
+
+}
+=> 
+
+=> const obj1 = new className(); // without arguments 
+=> const obj2=new sna(arg1,arg2)//with 2 arguments 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

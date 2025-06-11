@@ -1,0 +1,11 @@
+Good Morning !!!!!
+
+1. Strict mode : 
+async : 
+sequential step by step : 
+
+if statement#1 is waiting for outcome 
+statement#2 is executed => 
+=> sequential way  => cypess () => are usedto execute in seuqntial flow 
+test 1 should be completed before test 2 starts 
+

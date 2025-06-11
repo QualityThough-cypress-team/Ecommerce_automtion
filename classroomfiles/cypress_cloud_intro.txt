@@ -1,0 +1,47 @@
+Good Morning !!!!!
+Cypress cloud connecting with cypress local server
+Cypress cloud is a paid version of cypress 
+in this cypress cloud we do record the test results 
+test reply 
+test analytics 
+connecting cypress with GitHub
+with JIRA
+with teams
+with GITACTIONS for parallel execution 
+
+to connect your cypress with cypress cloud =>
+1. copy the project ID and place it in the cypress.config.js file 
+2. Copy the run command from cypress cloud 
+npx cypress run --record --key 64e5b686-f65a-444d-8e77-f3b3b518138a
+--record 
+--key value => this is the transmitting channel between your cypress cloud and cypress app. 
+now cypress will look for is this cypress application is having the right project id associated with this key then it will post the results to the cypress cloud organization >> project 
+=> projectID 
+=> key  both components will help us to connect between cypress cloud and cypress 
+
+Once you are able to see your results in the cypress cloud project we can see no commit message as this project with in the cypress cloud not connected with the GitHub repo
+lets do it
+in the project left hand pane  >> settings  >> integrations >> in this integration page we can able to see Enable GitHub button .. just click on it
+
+it will ask you for authorization to install the cypress cloud related application to connect 
+
+1. all repositories exist with in the GitHub account 
+2. specify the repository you want to install the cypress app to connect 
+
+I select second option to specially connecting my project repo only 
+
+provide the authentication key and move further 
+
+Once app is installed and you can be landed on cypress cloud integration page.
+
+in this page you  can select GitHub repository from dropdown
+
+1. Report run status  =>enable 
+2. Report flaky test => flakytest is nothing but a test providing the inconsistent result .
+that mean one run it is failed , in the second it may fail or third it may pass 
+Cypress cloud provide alternatives to GitHub 
+GitLab
+bitbuket 
+
+
+

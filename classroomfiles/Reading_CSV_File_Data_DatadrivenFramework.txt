@@ -1,0 +1,91 @@
+Good Morning !!!!!
+
+We understand invoke  , trigger , its to handle object properties or functions
+cy.fixture() is used to load the data into the tests 
+cy.readFile() is used to load the data - dynamically it fetch the data from the file - latest from the file if any assertion or any command get failed. 
+
+Read the data from CSV file . 
+comma separated values 
+
+To read this csv file we can take the help of neat-csv plugin or package 
+
+1. npm install neat-csv@5
+
+2. const neat-CSV= require('neat-csv') //importing the neat-csv capabilities into your test file with above  statement 
+3. cy.fixture('testData.csv').then(neat-csv).then(testData)
+
+4. Math.floor()
+math.ramdom() 
+
+finally we will achieve it 
+
+1. how to read CSV file data into cypress with the help of neat-CSV 
+2. Read the data through for loop 
+3. read the data from random row number 
+Data driven testing 
+Custom keywords  => 
+
+are useful to maintain repetive code at commands.js file with a name and it can be used across allyour test
+
+login
+logout 
+shopping cart 
+search 
+cy.search() 
+cy.shoppingcart()
+cy.get() 
+===========================
+
+GitHub repository checkins chekckout and cypresscloud 
+pom => 
+bdd framework 
+cypresscloud itegration with teams , jira , gitactions 
+=======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+reading the csv data from the external file with the help of neat-csv 
+
+Data driven frame work => 
+we can use your loops to drive the data at your own requirement
+
+POM => design pattern 
+BDD frame work=> behavioral driven development 
+
+Cypress cloud  => 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+We are understanding different invoke methods in cypress 
+
+first we understand how  to call a function by using 
+cy.wrap().invoke('functionname').should('equal',15)
+myFunction(x, y){
+
+retrun x+y
+}
+
+to convert this JS code into  cypress chainable object with the help of wrap 
+
+cy.wrap(myFunction).invoke('call', 10,5)
+
+We need to run http-server 
+this is a local server to establish this html into an url 
+
+to launch the html code exist in your local computer we need to take the help of http-server npm package 
+
+1. how to install this package 
+npm install http-server  => copy this command and past it in the project folder -terminal 
+
+2. how to run the http-server in your computer 
+npx http-server  
+this will launch the local http-server in the project directory 
+
+you do not disturb this terminal until your test is done.
+
+3. to launch cypress open the new terminal and execute below command 
+npx cypress open 
+
+how we can setup the http-server in your local computer 
+
+now browse the HTML code in the URL 
+
+cy.visit("http://192.168.219.87:8080/cypress/HTML/homepage.html")
+
+if you download my code you can change  => your ipaddress in place of my ip address 
+
+open the command prompt and ipconfig 
+
+invoke functions useful in cypress automation 
+1. removeattribute
+2. call 
+3. text
+4. 
+
+example invokes for cypress :
+
+cy.get('.input').invoke('val').should('eq', 'foo') // Invoke the 'val' function
+cy.get('.modal').invoke('show') // Invoke the jQuery 'show' function
+cy.wrap({ animate: fn }).invoke('animate') // Invoke the 'animate' function
+
+
+const fn = () => {
+  return 'bar'
+}
+
+cy.wrap({ foo: fn }).invoke('foo').should('eq', 'bar') // true
+
+show and hide from html 
+
+cy.get('div.container')
+  .should('be.hidden') // element is hidden
+  .invoke('show') // call jquery method 'show' on the '.container'
+  .should('be.visible') // element is visible now
+  .find('input') // drill down into a child "input" element
+  .type('Cypress is great') // and type text
+
+invoking the attribute 
+
+cy.get('img').invoke('attr', 'src').should('include', 'myLogo')
+
+
+workaround for new tabs in cypress 
+
+Use cy.get().invoke('removeAttr', 'target') to get around new tab
+
+
+invoke(removeAttr, 'target')

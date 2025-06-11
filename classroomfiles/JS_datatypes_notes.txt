@@ -1,0 +1,20 @@
+Good Morning !!!!!
+
+Data types : 
+
+how many kinds of data a variable can store. 
+
+Data types we can classified into two types 
+
+1.primitive data types 
+2. non primitive or reference data types 
+
+1. Primitive data type : 
+This data type is storing the single data 
+x=10 => Number
+name='ram' => string 
+value=true  => boolean
+undefined  => undefined 
+null  => forcibly you are assigning the null value 
+
+We do have above primitive data types in JS => before 2015 =>  ES6 

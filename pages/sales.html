@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard - Global E-Commerce Hub</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .sales-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .sales-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .stat-change {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .stat-change.positive {
+            color: #28a745;
+        }
+
+        .stat-change.negative {
+            color: #dc3545;
+        }
+
+        .sales-charts {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .chart-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chart-placeholder {
+            height: 300px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .top-products {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-rank {
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-name {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-sales {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .product-revenue {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .sales-charts {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../index.html" style="color: white; text-decoration: none;"><i class="fas fa-shopping-cart"></i> Global E-Hub</a></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="sales.html" class="active">Sales</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <span id="userName"></span>
+                    <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sales Hero -->
+    <section class="sales-hero">
+        <div class="container">
+            <h1>Sales Dashboard</h1>
+            <p>Track your sales performance and revenue analytics</p>
+        </div>
+    </section>
+
+    <!-- Sales Statistics -->
+    <section class="sales-section">
+        <div class="container">
+            <div class="sales-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-number">$45,670</div>
+                    <div class="stat-label">Total Revenue</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +12.5% from last month
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(45deg, #11998e, #38ef7d);">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="stat-number">1,834</div>
+                    <div class="stat-label">Total Orders</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +8.3% from last month
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-number">$24.89</div>
+                    <div class="stat-label">Average Order Value</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +5.7% from last month
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(45deg, #f093fb, #f5576c);">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-number">3.2%</div>
+                    <div class="stat-label">Conversion Rate</div>
+                    <div class="stat-change negative">
+                        <i class="fas fa-arrow-down"></i> -1.2% from last month
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Charts -->
+            <div class="sales-charts">
+                <div class="chart-card">
+                    <h3>Revenue Trends</h3>
+                    <div class="chart-placeholder">
+                        Revenue chart would be displayed here using Chart.js or similar library
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Sales by Category</h3>
+                    <div class="chart-placeholder">
+                        Pie chart showing sales distribution by category
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Products -->
+            <div class="top-products">
+                <h3>Top Selling Products</h3>
+                
+                <div class="product-item">
+                    <div class="product-rank">1</div>
+                    <div class="product-info">
+                        <div class="product-name">Wireless Bluetooth Headphones</div>
+                        <div class="product-sales">245 units sold</div>
+                    </div>
+                    <div class="product-revenue">$19,605</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-rank">2</div>
+                    <div class="product-info">
+                        <div class="product-name">Smart Fitness Watch</div>
+                        <div class="product-sales">156 units sold</div>
+                    </div>
+                    <div class="product-revenue">$31,200</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-rank">3</div>
+                    <div class="product-info">
+                        <div class="product-name">Premium Cotton T-Shirt</div>
+                        <div class="product-sales">189 units sold</div>
+                    </div>
+                    <div class="product-revenue">$5,667</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-rank">4</div>
+                    <div class="product-info">
+                        <div class="product-name">Yoga Mat with Carrying Strap</div>
+                        <div class="product-sales">134 units sold</div>
+                    </div>
+                    <div class="product-revenue">$5,356</div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-rank">5</div>
+                    <div class="product-info">
+                        <div class="product-name">LED Desk Lamp</div>
+                        <div class="product-sales">98 units sold</div>
+                    </div>
+                    <div class="product-revenue">$4,902</div>
+                </div>
+            </div>
+
+            <!-- Affiliate Performance -->
+            <div class="chart-card">
+                <h3>Affiliate Partner Performance</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                        <h4>Amazon</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #28a745;">$18,450</div>
+                        <div style="color: #666;">Revenue</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                        <h4>Flipkart</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #28a745;">$12,230</div>
+                        <div style="color: #666;">Revenue</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                        <h4>Alibaba</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #28a745;">$9,890</div>
+                        <div style="color: #666;">Revenue</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                        <h4>eBay</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #28a745;">$5,100</div>
+                        <div style="color: #666;">Revenue</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Global E-Hub</h3>
+                    <p>Your gateway to worldwide shopping with the best deals from global retailers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="customers.html">Customers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Global E-Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/app.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

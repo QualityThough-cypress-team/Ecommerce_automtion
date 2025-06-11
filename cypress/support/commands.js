@@ -14,7 +14,7 @@
 //create a code to 
 
 // -- This is a parent command --
-
+require('cypress-iframe');
 Cypress.Commands.add('myButton', (location) => {
  cy.get(location).click()
 

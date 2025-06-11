@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global E-Commerce Hub - Your Gateway to Worldwide Shopping</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><i class="fas fa-shopping-cart"></i> Global E-Hub</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="pages/products.html">Products</a></li>
+                    <li><a href="pages/catalog.html">Catalog</a></li>
+                    <li><a href="pages/sales.html">Sales</a></li>
+                    <li><a href="pages/customers.html">Customers</a></li>
+                    <li><a href="pages/admin.html">Admin</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <span id="userName"></span>
+                    <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Promotional Slideshow -->
+    <section class="hero">
+        <div class="slideshow-container">
+            <div class="slide active">
+                <iframe src="https://affiliate.flipkart.com/promotional-banner" 
+                        width="100%" height="400" frameborder="0" 
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                </iframe>
+                <div class="fallback-slide" style="display: none;">
+                    <img src="assets/flipkart-sale.jpg" alt="Flipkart Sale" onerror="this.src='assets/placeholder-sale.jpg'">
+                    <div class="slide-content">
+                        <h2>Flipkart Mega Sale</h2>
+                        <p>Up to 80% off on Electronics, Fashion & More</p>
+                        <button class="btn btn-primary">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <iframe src="https://affiliate.amazon.com/promotional-banner" 
+                        width="100%" height="400" frameborder="0"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                </iframe>
+                <div class="fallback-slide" style="display: none;">
+                    <img src="assets/amazon-sale.jpg" alt="Amazon Sale" onerror="this.src='assets/placeholder-sale.jpg'">
+                    <div class="slide-content">
+                        <h2>Amazon Prime Day</h2>
+                        <p>Exclusive deals for Prime members</p>
+                        <button class="btn btn-primary">Explore Deals</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="affiliate-content">
+                    <img src="assets/global-brands.jpg" alt="Global Brands" onerror="this.src='assets/placeholder-brands.jpg'">
+                    <div class="slide-content">
+                        <h2>Global Brand Collection</h2>
+                        <p>Discover products from top international retailers</p>
+                        <button class="btn btn-primary">Browse Catalog</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation arrows -->
+            <button class="slide-nav prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="slide-nav next" onclick="changeSlide(1)">&#10095;</button>
+            
+            <!-- Slide indicators -->
+            <div class="slide-indicators">
+                <span class="indicator active" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Electronics</h3>
+                    <p>Latest gadgets and tech</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Fashion</h3>
+                    <p>Trending styles worldwide</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Home & Garden</h3>
+                    <p>Decor and essentials</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Sports & Fitness</h3>
+                    <p>Stay active and healthy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliate Partners Section -->
+    <section class="affiliate-partners">
+        <div class="container">
+            <h2>Our Global Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="assets/flipkart-logo.png" alt="Flipkart" onerror="this.src='assets/placeholder-logo.png'">
+                    <h4>Flipkart</h4>
+                    <p>India's leading e-commerce platform</p>
+                </div>
+                <div class="partner-card">
+                    <img src="assets/amazon-logo.png" alt="Amazon" onerror="this.src='assets/placeholder-logo.png'">
+                    <h4>Amazon</h4>
+                    <p>Global marketplace leader</p>
+                </div>
+                <div class="partner-card">
+                    <img src="assets/alibaba-logo.png" alt="Alibaba" onerror="this.src='assets/placeholder-logo.png'">
+                    <h4>Alibaba</h4>
+                    <p>World's largest B2B platform</p>
+                </div>
+                <div class="partner-card">
+                    <img src="assets/ebay-logo.png" alt="eBay" onerror="this.src='assets/placeholder-logo.png'">
+                    <h4>eBay</h4>
+                    <p>Global online auction house</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="switchToSignup">Sign up here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name:</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <p class="form-footer">Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Global E-Hub</h3>
+                    <p>Your gateway to worldwide shopping with the best deals from global retailers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="pages/products.html">Products</a></li>
+                        <li><a href="pages/catalog.html">Catalog</a></li>
+                        <li><a href="pages/sales.html">Sales</a></li>
+                        <li><a href="pages/customers.html">Customers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Global E-Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/slideshow.js"></script>
+</body>
+</html>

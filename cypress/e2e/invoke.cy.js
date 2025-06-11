@@ -35,6 +35,46 @@ describe("Invoke", () => {
              cy.get(".logo")
             .invoke("text")
             .should('eq',"ShopEase") // to get the src attribute of the logo
+            //what are the functions we can invoke in cypress
+            cy.get(".logo")
+            .invoke("attr", "src") // to get the src attribute of the logo
+            .should("include", "logo.png") // verifying the src attribute of the logo
+            cy.get(".logo")
+            .invoke("attr", "alt") // to get the alt attribute of the logo      
+            .should("include", "ShopEase Logo") // verifying the alt attribute of the logo
+            cy.get(".logo")
+            .invoke("css", "width") // to get the width of the logo
+            .should("eq", "150px") // verifying the width of the logo
+            cy.get(".logo")
+            .invoke("css", "height") // to get the height of the logo   
+            .should("eq", "50px") // verifying the height of the logo
+            cy.get(".logo")
+            .invoke("css", "background-color") // to get the background color of the logo   
+            .should("eq", "rgb(255, 255, 255)") // verifying the background color of the logo
+            cy.get(".logo")
+            .invoke("css", "border") // to get the border of the logo   
+            .should("eq", "1px solid rgb(0, 0, 0)") // verifying the border of the logo
+            cy.get(".logo")
+            .invoke("css", "border-radius") // to get the border radius of the logo 
+            .should("eq", "5px") // verifying the border radius of the logo
+            cy.get(".logo")
+            .invoke("css", "box-shadow") // to get the box shadow of the logo
+            .should("eq", "0px 2px 5px rgba(0, 0, 0, 0.1)") // verifying the box shadow of the logo
+            cy.get(".logo")
+            .invoke("css", "transition") // to get the transition of the logo
+            .should("eq", "all 0.3s ease-in-out") // verifying the transition of the logo
+            cy.get(".logo").invoke("css", "cursor") // to get the cursor of the logo
+            .should("eq", "pointer") // verifying the cursor of the logo
+            cy.get(".logo")
+            .invoke("css", "display") // to get the display of the logo 
+            .should("eq", "inline-block") // verifying the display of the logo
+            cy.get(".logo")
+            .invoke("css", "position") // to get the position of the logo   
+            .should("eq", "relative") // verifying the position of the logo
+            cy.get(".logo") 
+            .invoke("css", "z-index") // to get the z-index of the logo
+            .should("eq", "1000") // verifying the z-index of the logo
+            
 })
 })
 

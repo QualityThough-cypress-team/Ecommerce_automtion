@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management - Global E-Commerce Hub</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .customers-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .customer-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .customer-table-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .table-header {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .customer-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .customer-table th,
+        .customer-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .customer-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .customer-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .customer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .customer-details {
+            flex: 1;
+        }
+
+        .customer-name {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .customer-email {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-icon {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-edit {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .search-filters {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            gap: 1rem;
+            align-items: end;
+        }
+
+        @media (max-width: 768px) {
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .customer-table {
+                font-size: 0.9rem;
+            }
+            
+            .customer-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../index.html" style="color: white; text-decoration: none;"><i class="fas fa-shopping-cart"></i> Global E-Hub</a></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="sales.html">Sales</a></li>
+                    <li><a href="customers.html" class="active">Customers</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <span id="userName"></span>
+                    <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Customers Hero -->
+    <section class="customers-hero">
+        <div class="container">
+            <h1>Customer Management</h1>
+            <p>Manage your customer base and track customer analytics</p>
+        </div>
+    </section>
+
+    <!-- Customer Statistics -->
+    <section class="customers-section">
+        <div class="container">
+            <div class="customer-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">892</div>
+                    <div class="stat-label">Total Customers</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +15 this week
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(45deg, #11998e, #38ef7d);">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-number">756</div>
+                    <div class="stat-label">Active Customers</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 84.7% active rate
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stat-number">47</div>
+                    <div class="stat-label">New This Month</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +23% growth
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(45deg, #f093fb, #f5576c);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-number">4.6</div>
+                    <div class="stat-label">Avg. Satisfaction</div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> +0.3 from last month
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="search-filters">
+                <div class="filter-row">
+                    <div class="form-group">
+                        <label>Search Customers</label>
+                        <input type="search" placeholder="Search by name, email, or ID..." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Join Date</label>
+                        <select class="form-control">
+                            <option value="">All Time</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="year">This Year</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Table -->
+            <div class="customer-table-container">
+                <div class="table-header">
+                    <h3>Customer List</h3>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Add Customer
+                    </button>
+                </div>
+                
+                <table class="customer-table">
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Join Date</th>
+                            <th>Orders</th>
+                            <th>Total Spent</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">JD</div>
+                                    <div class="customer-details">
+                                        <div class="customer-name">John Doe</div>
+                                        <div class="customer-email">john.doe@example.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Dec 1, 2023</td>
+                            <td>5</td>
+                            <td>$459.95</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon btn-view" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-icon btn-edit" title="Edit Customer">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon btn-delete" title="Delete Customer">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">JS</div>
+                                    <div class="customer-details">
+                                        <div class="customer-name">Jane Smith</div>
+                                        <div class="customer-email">jane.smith@example.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Nov 15, 2023</td>
+                            <td>3</td>
+                            <td>$289.97</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon btn-view" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-icon btn-edit" title="Edit Customer">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon btn-delete" title="Delete Customer">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">BJ</div>
+                                    <div class="customer-details">
+                                        <div class="customer-name">Bob Johnson</div>
+                                        <div class="customer-email">bob.johnson@example.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Oct 20, 2023</td>
+                            <td>8</td>
+                            <td>$1,249.92</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon btn-view" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-icon btn-edit" title="Edit Customer">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon btn-delete" title="Delete Customer">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">AB</div>
+                                    <div class="customer-details">
+                                        <div class="customer-name">Alice Brown</div>
+                                        <div class="customer-email">alice.brown@example.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Sep 10, 2023</td>
+                            <td>2</td>
+                            <td>$159.98</td>
+                            <td><span class="status-badge status-inactive">Inactive</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon btn-view" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-icon btn-edit" title="Edit Customer">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon btn-delete" title="Delete Customer">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">CW</div>
+                                    <div class="customer-details">
+                                        <div class="customer-name">Charlie Wilson</div>
+                                        <div class="customer-email">charlie.wilson@example.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Aug 5, 2023</td>
+                            <td>12</td>
+                            <td>$2,399.88</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-icon btn-view" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-icon btn-edit" title="Edit Customer">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon btn-delete" title="Delete Customer">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button disabled>Previous</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Global E-Hub</h3>
+                    <p>Your gateway to worldwide shopping with the best deals from global retailers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="customers.html">Customers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Global E-Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/app.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

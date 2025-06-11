@@ -13,7 +13,8 @@ module.exports = defineConfig({
      //screen shots , videos will be cleared.
      includeShadowDom:true,
 
-     baseUrl:'http://192.168.80.87:8080/',
+     baseUrl:'http://192.168.24.87:8080',
+     //http://192.168.24.87:8080
     //experimentalStudio:true, 
     //supportFile:
     // this command is used to enabled the studio command in the test runner 

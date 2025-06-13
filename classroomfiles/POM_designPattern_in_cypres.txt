@@ -1,0 +1,57 @@
+Good morning !!!!!
+
+Recap!!!!!
+
+We understand how to handle different UI components 
+Iframes 
+alerts 
+======================================================
+Now we need understand the frame work :
+
+Design pattern POM => and then move on to BDD 
+
+Framework is nothing but a folder structure or organize the different activities at different folders. 
+
+cypress : 
+
+Project folder => 
+Cypress  => 
+   e2e =. to write tests 
+   support => e2e.js and commands.js these files will execute before your test . 
+   fixtures  => this is the place to provide test data 
+                .json file 
+                 .csv file 
+    screenshots => whenever your test fail cypress will capture the screenshot that  will be exists int he screenshot folder 
+    videos => 
+
+   e2e => 
+
+how you are organizing the tests 
+
+with in e2e => how do you manage or oraganize your tests to give more readability to the customer 
+1. POM => page object model 
+
+this model we need to segregate the automation code between two file 
+
+currently everything in our one test. 
+test.cy.js  => 
+
+Pages is a factory to produce all the selectors and all methods belongs to that page 
+so one place we do change if any selector or methods we have to change in future . 
+
+so it is easy to write and maintain code -
+and reusability of the selectors and methods for our automation 
+we do not want to write the same kind of test again and again 
+instead we create the methods  in the class and use them whenever we want to use
+========================================================
+  
+
+
+
+
+
+
+
+
+
+
